@@ -1,0 +1,5 @@
+2022-06-01 16:46:04,618-[DEBUG]-[msg]:这是一条debug日志 - log_file - 36
+2022-06-01 16:46:04,618-[INFO]-[msg]:这是一条info日志 - log_file - 37
+2022-06-01 16:46:04,618-[ERROR]-[msg]:这是一条error日志 - log_file - 38
+2022-06-01 16:46:04,618-[WARNING]-[msg]:这是一条warning日志 - log_file - 39
+2022-06-01 16:46:04,618-[CRITICAL]-[msg]:这是一条critical日志 - log_file - 40

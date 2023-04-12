@@ -1,0 +1,30 @@
+
+excel:
+  filename: '/Users/admin/PycharmProjects/TestApi_0601/data/py01.xlsx'
+  real_result_column: 7
+  real_row: 8
+
+api:
+  api_version: {"X-Lemonban-Media-Type": "lemonban.v2"}
+  base_url: "http://api.lemonban.com/futureloan/member/login"
+
+reports:
+  html_file: '/Users/admin/PycharmProjects/TestApi_0601/reports/testcase.html'
+
+mysql:
+  host: "api.lemonban.com"
+  user: "future"
+  password: '123456'
+  port: 3306
+  database: "futureloan"
+  select_user_sql: "select mobile_phone from member where mobile_phone=%s"
+  select_userid_sql: "select id from member where mobile_phone=%s"
+  select_max_userid_sql: "select id from member order by id DESC LIMIT 0,1"
+  select_max_loan_id_sql: "select id from loan order by id DESC LIMIT 0,1"
+
+
+# 选项名：选项值
+# 如果选项值为数字,那么会自动转化为数字类型(int. float)
+# 如果选项值为true,on,True,那么会自动转化为True
+# 如果选项值为false.off. false,那么会白动转化为False
+# 其他有字母的，读取出来都是字符串类型

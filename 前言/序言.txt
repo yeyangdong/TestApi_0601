@@ -1,0 +1,34 @@
+1.Test_0601是是设计的全新的一套框架,这里只做记录和提示
+
+2.根据分层理念来设计测试框架
+数据层:
+	用例数据:excel
+配置层:
+	存储的配置信息(.conf,  yaml)
+用例层:
+	test_, 用于存储测试类模块
+第三方库层:
+	用来存储第三方导入模块的,比如HTMLTestRunnerNew.py测试报告,ddt
+日志层"
+	用来存放执行日志
+脚本层:
+	存放一些模块的封装类,供其他人调用的,自己写的脚本
+报告层:
+    存放测试报告
+入口层:
+	接口自动化框架的入口模块
+        # 使用unittest.defaultTestLoader.discover方法,会返回套套件对象
+        # a.第一个参数为发现用例的路径,带引号
+        # b.第二个参数为用例模块的匹配方式(默认会自动找文件名为'test*.py'的文件,也可以自定义,例如'yyd*.py')
+        # c.用例的自动发现机制,查找test_的文件去执行,生成报告
+        suite = unittest.defaultTestLoader.discover('.', 'test_*.py')
+
+        # 3.执行用例
+        # 创建TextTestRunner运行器
+        with open('testcase2.html', 'wb') as file:
+             runner = HTMLTestRunner(file,
+                            verbosity=1,
+                            title='叶洋东的第一份测试报告',
+                            description='牛逼666',
+                            tester='叶洋东')
+             runner.run(suite)
