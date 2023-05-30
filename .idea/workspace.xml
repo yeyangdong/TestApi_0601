@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7309cab-8623-4dc6-93fe-41b3ef84bc9c" name="Changes" comment="" />
+    <list default="true" id="e7309cab-8623-4dc6-93fe-41b3ef84bc9c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cases/test_01_register.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cases/test_02_login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/testcase.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/testcase.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/handle_log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cases/test_register.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/confs/testcase.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/confs/testcase.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/py01.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/HTMLTestRunnerNew.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/HTMLTestRunner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/ddt.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/ddt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/loging.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/testcase.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/handle_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/handle_excel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/handle_logging.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/handle_parameterize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/handle_path.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/handle_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/handle_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/handle_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/handle_yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/handle_yaml.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,10 +36,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/confs/testcase.yaml" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FvUtpCCr3aO2JqAPiyuNgexygR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,10 +56,40 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "/Users/yeyangdong/Desktop/自己写的代码/PycharmProjects/TestApi_0601",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "configurable.group.project"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$/logs" />
+      <recent name="$PROJECT_DIR$/libs" />
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.handle_excel">
+    <configuration name="handle_excel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TestApi_0601" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/handle_excel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TestApi_0601" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -54,6 +113,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.handle_excel" />
         <item itemvalue="Python.run" />
       </list>
     </recent_temporary>
@@ -68,5 +128,16 @@
       <updated>1665372268976</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,15 +1,19 @@
-
 excel:
-  filename: '/Users/admin/PycharmProjects/TestApi_0601/data/py01.xlsx'
+  filename: 'testcase.xlsx'
   real_result_column: 7
   real_row: 8
 
 api:
-  api_version: {"X-Lemonban-Media-Type": "lemonban.v2"}
+  api_version: { "X-Lemonban-Media-Type": "lemonban.v2" }
   base_url: "http://api.lemonban.com/futureloan/member/login"
 
 reports:
-  html_file: '/Users/admin/PycharmProjects/TestApi_0601/reports/testcase.html'
+  filename: 'testReport.html'
+  verbosity: 1
+  title: '叶洋东的报告'
+  description: "自动化报告description"
+  tester: '报告人：叶洋东'
+
 
 mysql:
   host: "api.lemonban.com"
@@ -21,6 +25,15 @@ mysql:
   select_userid_sql: "select id from member where mobile_phone=%s"
   select_max_userid_sql: "select id from member order by id DESC LIMIT 0,1"
   select_max_loan_id_sql: "select id from loan order by id DESC LIMIT 0,1"
+
+
+
+log:
+  logger_level: "DEBUG"
+  log_filename: "testcase.log"
+
+
+
 
 
 # 选项名：选项值

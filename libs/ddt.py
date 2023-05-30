@@ -20,7 +20,14 @@ except ImportError:  # pragma: no cover
 else:
     _have_yaml = True
 
-__version__ = '1.5.0'
+try:
+    # Python >=3
+    from collections.abc import Sequence
+except ImportError:
+    # Python 2.7
+    from collections import Sequence
+
+__version__ = '1.6.0'
 
 # These attributes will not conflict with any real python attribute
 # They are added to the decorated test method and processed later
@@ -33,10 +40,32 @@ UNPACK_ATTR = '%unpack'            # remember that we have to unpack values
 INDEX_LEN = '%index_len'           # store the index length of the data
 
 
+# These are helper classes for @named_data that allow ddt tests to have meaningful names.
+class _NamedDataList(list):
+    def __init__(self, name, *args):
+        super(_NamedDataList, self).__init__(args)
+        self.name = name
+
+    def __str__(self):
+        return str(self.name)
+
+
+class _NamedDataDict(dict):
+    def __init__(self, **kwargs):
+        if "name" not in kwargs.keys():
+            raise KeyError("@named_data expects a dictionary with a 'name' key.")
+        self.name = kwargs.pop('name')
+        super(_NamedDataDict, self).__init__(kwargs)
+
+    def __str__(self):
+        return str(self.name)
+
+
+trivial_types = (type(None), bool, int, float, _NamedDataList, _NamedDataDict)
 try:
-    trivial_types = (type(None), bool, int, float, basestring)
+    trivial_types += (basestring, )
 except NameError:
-    trivial_types = (type(None), bool, int, float, str)
+    trivial_types += (str, )
 
 
 @unique
@@ -344,15 +373,17 @@ def ddt(arg=None, **kwargs):
             if hasattr(func, DATA_ATTR):
                 index_len = getattr(func, INDEX_LEN)
                 for i, v in enumerate(getattr(func, DATA_ATTR)):
-                    test_name = mk_test_name(
-                        name,
-                        getattr(v, "__name__", v),
-                        i,
-                        index_len,
-                        fmt_test_name
-                    )
+                    # test_name = mk_test_name(
+                    #     name,
+                    #     getattr(v, "__name__", v),
+                    #     i,
+                    #     index_len,
+                    #     fmt_test_name
+                    # )
                     # test_data_docstring = _get_test_data_docstring(func, v)
+                    test_name = mk_test_name(name,getattr(v, "__name__", v),i)
                     test_data_docstring = v["name"]
+
                     if hasattr(func, UNPACK_ATTR):
                         if isinstance(v, tuple) or isinstance(v, list):
                             add_test(
@@ -383,3 +414,57 @@ def ddt(arg=None, **kwargs):
     # ``arg`` is the unittest's test class when decorating with ``@ddt`` while
     # it is ``None`` when decorating a test class with ``@ddt(k=v)``.
     return wrapper(arg) if inspect.isclass(arg) else wrapper
+
+
+def named_data(*named_values):
+    """
+    This decorator is to allow for meaningful names to be given to tests that would otherwise use @ddt.data and
+    @ddt.unpack.
+
+    Example of original ddt usage:
+        @ddt.ddt
+        class TestExample(TemplateTest):
+            @ddt.data(
+                [0, 1],
+                [10, 11]
+            )
+            @ddt.unpack
+            def test_values(self, value1, value2):
+                ...
+
+    Example of new usage:
+        @ddt.ddt
+        class TestExample(TemplateTest):
+            @named_data(
+                ['LabelA', 0, 1],
+                ['LabelB', 10, 11],
+            )
+            def test_values(self, value1, value2):
+                ...
+
+    Note that @unpack is not used.
+
+    :param Sequence[Any] | dict[Any,Any] named_values: Each named_value should be a Sequence (e.g. list or tuple) with
+        the name as the first element, or a dictionary with 'name' as one of the keys. The name will be coerced to a
+        string and all other values will be passed unchanged to the test.
+    """
+    values = []
+    for named_value in named_values:
+        if not isinstance(named_value, (Sequence, dict)):
+            raise TypeError(
+                "@named_data expects a Sequence (list, tuple) or dictionary, and not '{}'.".format(type(named_value))
+            )
+
+        value = _NamedDataDict(**named_value) if isinstance(named_value, dict) \
+            else _NamedDataList(named_value[0], *named_value[1:])
+
+        # Remove the __doc__ attribute so @ddt.data doesn't add the NamedData class docstrings to the test name.
+        value.__doc__ = None
+
+        values.append(value)
+
+    def wrapper(func):
+        data(*values)(unpack(func))
+        return func
+
+    return wrapper

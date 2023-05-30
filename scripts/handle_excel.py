@@ -1,10 +1,7 @@
-# Excel 第四节课,封装调用Excel
-
 from openpyxl import load_workbook
 
 
-class HandleExcel:
-
+class HandleExcel():
     def __init__(self, filename, sheetname):
         self.filename = filename
         self.sheetname = sheetname
@@ -14,29 +11,35 @@ class HandleExcel:
         ws = wb[self.sheetname]
 
         testcase_list = []
-        headers_list = []
+        head_list = []  # 存放表头，就是excel第一行的数据
+
         for row in range(1, ws.max_row + 1):
-            # 存放每一行的用例数据
             one_row_dict = {}
             for column in range(1, ws.max_column + 1):
-                one_cell_value = ws.cell(row, column).value
+                one_cell_value = ws.cell(row, column).value  # 获取每个单元格的值
                 if row == 1:
-                    headers_list.append(one_cell_value)
+                    head_list.append(one_cell_value)  # 获取excel文件中，当行数为1时，所有的列名，存放到head——list列表
                 else:
-                    key = headers_list[column - 1]  # 将上面的headers_list拿过来做字典中的key
-                    one_row_dict[key] = one_cell_value  # one_row_dict的key,赋值为one_cell_value的值
-                    testcase_list.append(one_row_dict)
+                    key = head_list[column - 1]  # 遍历获取表头的值
+                    one_row_dict[key] = one_cell_value  # 赋值给key（key是表头），形成字典的键值对
+            if row != 1:
+                testcase_list.append(one_row_dict)
 
         return testcase_list
 
     def write_data(self, row, column, data):
-        # 指定在某一行某一列写数据
-        # 将数据写入到Excel中,不能与读取时共用一个workbook对象
+        """
+        :param row:指定在某一行写
+        :param column:指定在某一列写
+        :param data:待写入的数据
+        :return:
+        1.如果将数据写入到excel中，不能读取操作公用一个Workbook对象
+        """
         wb = load_workbook(self.filename)
         ws = wb[self.sheetname]
 
         # 第一种写入方式
-        # one_cell = ws.cell(row, column)
+        # one_cell = ws.cell(row,column)
         # one_cell.value = data
 
         # 第二种写入方式
@@ -44,13 +47,9 @@ class HandleExcel:
 
         wb.save(self.filename)
 
-
 if __name__ == '__main__':
-    excel_filename = "yaml/py05.xlsx"
-    sheet_name = "登陆1"
-    do_excel = HandleExcel(excel_filename, sheet_name)
-    res = do_excel.read_data()
 
-    # print(do_excel.read_data())#,读数据
-
-    do_excel.write_data(2, 6, 1)  # 写数据
+    handle = HandleExcel("testcase.xlsx","register")
+    handle.read_data()
+    print(handle.read_data())
+    handle.write_data(8,8,"charushuju")
