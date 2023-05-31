@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7309cab-8623-4dc6-93fe-41b3ef84bc9c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cases/test_01_register.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cases/test_02_login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/testcase.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/testcase.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/handle_log.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cases/test_register.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/confs/testcase.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/confs/testcase.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/py01.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/HTMLTestRunnerNew.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/HTMLTestRunner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/ddt.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/ddt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/loging.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/testcase.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/handle_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/handle_excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/handle_logging.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/handle_parameterize.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/handle_path.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/handle_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/handle_request.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/handle_user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/handle_yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/handle_yaml.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
