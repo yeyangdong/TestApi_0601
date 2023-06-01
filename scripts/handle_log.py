@@ -1,5 +1,7 @@
 import logging
-from handle_yaml import do_yaml
+from scripts.handle_yaml import do_yaml
+import os
+from scripts.handle_path import LOGS_PATH
 
 
 class HandleLog():
@@ -13,7 +15,8 @@ class HandleLog():
 
         # 3。创建日志输出渠道（日志显示的地方）
         console_handler = logging.StreamHandler()  # 设置控制台输出
-        file_handler = logging.FileHandler(do_yaml.get_data("log", "log_filename"), encoding="utf-8")  # 设置日志文件中输出
+        file_path = os.path.join(LOGS_PATH, 'testcase.log')
+        file_handler = logging.FileHandler(file_path, encoding="utf-8")  # 设置日志文件中输出
 
         # 4，创建日志的显示样式
         formater = logging.Formatter('%(asctime)s-[%(levelname)s]-[msg]:%(message)s - %(name)s - %(lineno)d')

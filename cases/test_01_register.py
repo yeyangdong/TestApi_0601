@@ -1,11 +1,13 @@
 # 0.导入unittest模块
 import json
+import os.path
 import unittest
-import ddt
-from handle_request import HandleRequest
-from handle_excel import HandleExcel
-from handle_yaml import HandleYaml
-from handle_log import do_log
+from scripts.handle_request import HandleRequest
+from scripts.handle_excel import HandleExcel
+from scripts.handle_yaml import HandleYaml
+from scripts.handle_log import do_log
+from scripts.handle_path import DATA_PATH
+from libs import ddt
 
 
 do_yaml = HandleYaml()
@@ -13,7 +15,8 @@ do_yaml = HandleYaml()
 
 @ddt.ddt()  # 1.使用ddt.ddt作为类的装饰器
 class TestRegister(unittest.TestCase):  # 需要继承unittest.TestCase父类
-    do_excel = HandleExcel(do_yaml.get_data('excel', 'filename'), "register")
+    filename = do_yaml.get_data('excel', 'filename')
+    do_excel = HandleExcel(os.path.join(DATA_PATH, filename), "register")
     testcase_data = do_excel.read_data()  # 嵌套字典列表
 
     @classmethod
@@ -42,21 +45,6 @@ class TestRegister(unittest.TestCase):  # 需要继承unittest.TestCase父类
 
     @ddt.data(*testcase_data)
     def test_register(self, testcase_dict):
-        # 使用for循环读取数据存在的问题：
-        # 1.用例总数始终只统计为一条
-        # 2.一旦for循环中一条用例执行失败（比如抛出异常）， 那么整个for循环就会停止执行
-        # 3.基于第一条，失败的用例无法正确统计
-        # for testcase_dict in testcase_data:
-        #     res = self.do_request.send(method=testcase_dict["method"],
-        #                                url=testcase_dict["url"],
-        #                                json=testcase_dict["data"])
-        #     expected_value = testcase_dict["expected"]
-        #     actual = res.json()["code"]
-        #     try:
-        #         self.assertEqual(expected_value, actual, testcase_dict["name"])
-        #     except AssertionError as e:
-        #         print("此处需要日志记录")
-        #         print(f"具体异常为：{e}")
         res = self.do_request.send(method=testcase_dict["method"],
                                    url=testcase_dict["url"],
                                    json=json.loads(testcase_dict["data"]))

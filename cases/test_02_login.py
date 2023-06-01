@@ -1,17 +1,20 @@
 # 0.导入unittest模块
-import unittest
 import json
-import ddt
-from handle_request import HandleRequest
-from handle_excel import HandleExcel
-from handle_yaml import HandleYaml
-from handle_log import do_log
+import os.path
+import unittest
+from scripts.handle_request import HandleRequest
+from scripts.handle_excel import HandleExcel
+from scripts.handle_yaml import HandleYaml
+from scripts.handle_log import do_log
+from scripts.handle_path import DATA_PATH
+from libs import ddt
 
 do_yaml = HandleYaml()
 
 @ddt.ddt()  # 1.使用ddt.ddt作为类的装饰器
 class TestRegister(unittest.TestCase):  # 需要继承unittest.TestCase父类
-    do_excel = HandleExcel(do_yaml.get_data('excel', 'filename'), "login")
+    filename = do_yaml.get_data('excel', 'filename')
+    do_excel = HandleExcel(os.path.join(DATA_PATH, filename), "login")
     testcase_data = do_excel.read_data()  # 嵌套字典列表
 
     @classmethod

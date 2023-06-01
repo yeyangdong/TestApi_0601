@@ -1,5 +1,6 @@
 from openpyxl import load_workbook
-
+from scripts.handle_path import DATA_PATH
+import os
 
 class HandleExcel():
     def __init__(self, filename, sheetname):
@@ -47,9 +48,9 @@ class HandleExcel():
 
         wb.save(self.filename)
 
-if __name__ == '__main__':
-
-    handle = HandleExcel("testcase.xlsx","register")
-    handle.read_data()
-    print(handle.read_data())
-    handle.write_data(8,8,"charushuju")
+# if __name__ == '__main__':
+#     file_name = os.path.join(DATA_PATH, "testcase.xlsx")
+#     handle = HandleExcel(file_name, "register")
+#     handle.read_data()
+#     print(handle.read_data())
+#     handle.write_data(8,8,"charushuju")

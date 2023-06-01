@@ -1,11 +1,12 @@
 
 import yaml
-
+import os
+from scripts.handle_path import CONFS_PATH
 
 class HandleYaml():
     def __init__(self, filename=None):
         if filename is None:
-            self.filename = "testcase.yaml"
+            self.filename = os.path.join(CONFS_PATH, 'testcase.yaml')
         else:
             self.filename = filename
         with open(self.filename, encoding="utf-8") as file:
