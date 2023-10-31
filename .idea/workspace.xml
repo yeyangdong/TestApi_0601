@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7309cab-8623-4dc6-93fe-41b3ef84bc9c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/handle_path.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confs/caogao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cases/test_01_register.py" beforeDir="false" afterPath="$PROJECT_DIR$/cases/test_01_register.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cases/test_02_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/cases/test_02_login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/testcase.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/testcase.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/testcase.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/testcase.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/handle_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/handle_excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/handle_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/handle_log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/handle_yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/handle_yaml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/handle_mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/handle_mysql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,14 +35,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/yeyangdong/Desktop/自己写的代码/PycharmProjects/TestApi_0601",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/yeyangdong/Desktop/自己写的代码/PycharmProjects/TestApi_0601&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -57,8 +52,8 @@
       <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_01_register.TestRegister">
-    <configuration name="handle_path" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.caogao">
+    <configuration name="caogao" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TestApi_0601" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -66,11 +61,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/confs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/handle_path.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/confs/caogao.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -144,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_01_register.TestRegister" />
+        <item itemvalue="Python.caogao" />
         <item itemvalue="Python tests.Python tests for test_02_login.TestRegister" />
+        <item itemvalue="Python tests.Python tests for test_01_register.TestRegister" />
         <item itemvalue="Python tests.Python tests for test_01_register.TestRegister.test_register" />
         <item itemvalue="Python.handle_yaml" />
-        <item itemvalue="Python.handle_path" />
       </list>
     </recent_temporary>
   </component>
@@ -178,16 +173,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/handle_excel.py</url>
           <line>5</line>
           <option name="timeStamp" value="28" />
@@ -196,51 +181,6 @@
           <url>file://$PROJECT_DIR$/scripts/handle_excel.py</url>
           <line>6</line>
           <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>45</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>46</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>16</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>47</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cases/test_01_register.py</url>
-          <line>50</line>
-          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

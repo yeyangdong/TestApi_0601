@@ -1,8 +1,8 @@
 import random
 import pymysql
-from scripts.handle_yaml import handleYaml
+from handle_yaml import HandleYaml
 
-do_yaml = handleYaml()
+do_yaml = HandleYaml()
 
 
 class handle_mysql():
@@ -15,7 +15,7 @@ class handle_mysql():
             port=3306,
             database="futureloan",
             charset='utf8',
-            cursorclass=pymysql.cursors.DictCursor  # 字典类型返回
+            cursorclass=pymysql.cursors.DictCursor  # DictCursor的意义是将结果，以字典类型返回
         )
         # 2.创建游标
         self.cursor = self.connect.cursor()
